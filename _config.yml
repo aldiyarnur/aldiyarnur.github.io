@@ -59,8 +59,8 @@ yandex_site_verification :
 twitter:
   username               : &twitter
 facebook:
-  username               :
-  app_id                 :
+  username               : aldiyar.nurakhmet
+  app_id                 : aldiyar.nurakhmet
   publisher              :
 og_image                 :  # Open Graph/Twitter default site image
 # For specifying social profiles
@@ -81,35 +81,35 @@ analytics:
 # Site Author
 author:
   name             : "Aldiyar Nurakhmet"
-  avatar           : "profile.png"
-  bio              : "Responsible and professional Economics and Mathematics graduate with 3 years of combined research experience."
+  avatar           : "/images/avatar_icon.jpg"
+  bio              : "Economist/Data Scientist/Pro Chess Player"
   location         : "Planet Earth"
-  employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
+  employer         : 
+  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  googlescholar    : #"http://yourfullgooglescholarurl.com"
+  email            : aldiyarnur12@alumni.ubc.ca
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "https://www.facebook.com/aldiyar.nurakhmet"
   foursquare       :
-  github           : "academicpages"
+  github           : "aldiyarnur"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  linkedin         : "https://www.linkedin.com/in/aldiyarnurakhmet/"
+  orcid            : # "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : #"replacethistwitterhandle"
   vine             :
   weibo            :
   xing             :
