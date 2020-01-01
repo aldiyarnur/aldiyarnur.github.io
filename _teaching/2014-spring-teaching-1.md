@@ -1,5 +1,5 @@
 ---
-title: "Teaching experience 1"
+title: "TA for a first year intro calc courses"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
@@ -12,3 +12,4 @@ location: "Vancouver, BC"
 Calculus Tutor
 ======
 
+I worked a year as a TA for a first-year intro calculus courses. 
