@@ -3,10 +3,9 @@ title: "Estimating Country Risk Premium in Emerging Markets"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
 excerpt: 'My Thesis.'
-date: 200-10-01
-venue: 'Journal 1'
-paperurl: 'http://aldiyarnur.github.io/files/risk_premium.pdf'
-citation: 'Aldiyar Nurakhmet. (2017). &quot;Estimating Country Risk Premium in Emerging Markets; <i>May 1</i>. 1(1).'
+date: 2017-10-01
+venue: 'IONA'
+citation: 'Nurakhmet, Aldiyar (2017). &quot;Estimating Country Risk Premium in Emerging Markets; <i>March 30</i>. 1(1).'
 ---
 This paper is about finance and economics.
 
