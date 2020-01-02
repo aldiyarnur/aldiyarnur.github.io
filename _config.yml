@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Aldiyar Nurakhmet"
-  avatar           : "/images/profile.png"
+  avatar           : "aldiyarnur.github.io/images/avatar.png"
   bio              : "Economist/Data Scientist/Pro Chess Player"
   location         : "Planet Earth"
   employer         : 
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "/aldiyarnurakhmet/"
+  linkedin         : "aldiyarnurakhmet"
   orcid            : # "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
