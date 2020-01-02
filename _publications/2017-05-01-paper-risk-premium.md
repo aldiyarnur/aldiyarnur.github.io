@@ -11,7 +11,7 @@ This paper is about finance and economics.
 
 [Download paper here](http://aldiyarnur.github.io/files/risk_premium.pdf)
 
-#Introduction
+## Introduction
 
 In emerging markets, the investor may encounter instability of the political regime, external conflict, corruption, civil strife and war, control of exchange rates, unexpected inflation, various defaults, the expropriation of private capital and other events in the country. Therefore, to succeed in emerging markets must take into account the whole situation together. To this end, we introduced the concept “country risk”.
 Country risk - is a complex process, the nature of which can be varied and is determined by the dynamics of the interaction of many financial, socio-economic and political factors. Country risk - a risk that the actions of the sovereign will affect the ability of the debtor related with this country to fulfill its obligations
