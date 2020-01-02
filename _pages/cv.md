@@ -8,6 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
+
 <div style="text-align: center; margin-top: 90px;">
-  <iframe src="https://github.com/aldiyarnur/aldiyarnur.github.io/blob/master/files/AldiyarNurakhmet.pdf" scrolling="no" width="850px" height="2200px" frameBorder="0"></iframe>
+  <iframe src="https://aldiyarnur.github.io/files/AldiyarNurakhmet.pdf" scrolling="no" width="850px" height="1200px" frameBorder="0"></iframe>
 </div>
