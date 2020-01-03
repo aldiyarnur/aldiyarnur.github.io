@@ -1,6 +1,6 @@
 ---
 title: "International Football Results"
-excerpt: "Football Resutls analyzed<br/><img src='/images/500x300.png'>"
+excerpt: "First International Match<br/><img src='/images/England_v_scotland_1872_ad.png'>"
 collection: portfolio
 ---
 
