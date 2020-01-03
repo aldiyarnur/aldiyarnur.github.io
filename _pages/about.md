@@ -27,7 +27,7 @@ My keen interest in economic research was the main reason for taking up the anal
 
 The main reason for my interest in economics and data science, in particular, is my belief that a quantitative understanding of data is the major tool for predictive ability and understanding of the causes of the things.
 
-<img src="/images/vol.jpg" width="300px"  style="float: left; padding-right: 30px;"/>My passion for travelling, football, chess and sharing knowledge emanates from my curiosity and love for learning. My travelling experiences brought me to Quelonios del Caribe, Costa Rica, where I aided agricultural community and saved some sea turtles while learning about environmental conservation, social change, and community development. I also volunteered at the World Cup 2018, where I was a part of the hospitality and protocol team. 
+<img src="/images/vol.jpg" width="300px"  style="float: left; padding-right: 30px;"/>My passion for travelling, football, chess and sharing knowledge emanates from my curiosity and love for learning. My travelling experiences brought me to Quelonios del Caribe, Costa Rica, where I aided agricultural community and saved some sea turtles while learning about environmental conservation, social change, and community development. I also volunteered at the World Cup 2018, where I was a part of the hospitality team. 
 
 As a member of the national chess team, I travelled around the CIS and Eastern Europe to participate in numerous tournaments. Competing with great teams from Russia, Armenia and Azerbaijan, I learned that I am not a good chess player. 
 
