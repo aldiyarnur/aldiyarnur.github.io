@@ -703,6 +703,8 @@ plt.show()
 <br/><img src='/images/output_16_0.png'>
 
 
+Here are some goals scored stats from the last 3 World Cups in Russia, Brazil and South Africa.
+
 ```python
 RU=results[results['tournament']=='FIFA World Cup'].tail(64)
 ```
@@ -2040,3 +2042,4 @@ totalsa.sort_values(by=['tgs'], ascending=False)
 ```python
 
 ```
+More in part II
