@@ -1,5 +1,5 @@
 ---
-title: "International Football Results"
+title: "International Football Results part I"
 excerpt: "First International Match and 42000 games later<br/><img src='/images/England_v_scotland_1872_ad.png'>"
 collection: portfolio
 ---
@@ -126,7 +126,7 @@ results.head(5)
 </div>
 
 
-
+Extracted the calendar date variables in the interger format and total goals scored. I will use it mostly in the part II.
 
 ```python
 # New date variables
@@ -559,7 +559,7 @@ results[['away_score']].describe()
 </table>
 </div>
 
-
+From the quick glance and mean comparison between home score and away score, we can see that there is considerable evidence to the home castle advantage in the football. Considering there are over a quarter of games played on the neutral territory. 
 
 
 ```python
@@ -573,8 +573,8 @@ ax7.boxplot(data)
 plt.show()
 ```
 
+<br/><img src='output_7_0.png'>
 
-![png](output_7_0.png)
 
 
 
