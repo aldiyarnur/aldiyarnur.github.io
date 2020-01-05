@@ -573,8 +573,9 @@ ax7.boxplot(data)
 plt.show()
 ```
 
-<br/><img src='output_7_0.png'>
 
+
+<br/><img src='/images/output_7_0.png'>
 
 
 
@@ -587,7 +588,7 @@ plt.show()
 ```
 
 
-![png](output_8_0.png)
+[png](output_8_0.png)
 
 
 
