@@ -587,8 +587,10 @@ ax2.boxplot(data, showfliers=False, meanline= True, showmeans= True)
 plt.show()
 ```
 
+<br/><img src='/images/output_8_0.png'>
 
-[png](output_8_0.png)
+
+The whisker plot tells visually the distribution of the goals and reaffirms the home advantage theory. The second whisker plot excludes outliers and gives an insight on the goals scored. Half of all home goals scored on the international level are between 1 and 2 goals per game, while the away teams score between none to two. The extreme outlier on the away team score distribution is attained the big international teams such as Brazil, France and Germany against smaller teams of semi-professionals such as San Marino or Farore Islands. More on this topic in Part III.
 
 
 
@@ -603,8 +605,8 @@ with sns.axes_style('white'):
 ```
 
 
-![png](output_10_0.png)
-
+This graph doesn't tell much but I really wanted to see how it looks like. this one is really great for linear regressions.
+<br/><img src='/images/output_10_0.png'>
 
 
 ```python
@@ -619,10 +621,11 @@ sns.barplot(x=away_score_team.away_team[:50],y=away_score_team.Score[:50])
 plt.xticks(rotation=90)
 plt.show()
 ```
+This table just to illustrate what teams score the most away. Fascinatingly enough Sweden is the second. And more fascinatingly is that Zlatan Ibrahimovic is an author of 12% of goals Sweeden scored away. 
 
 
-![png](output_11_0.png)
 
+<br/><img src='/images/output_11_0.png'>
 
 
 ```python
@@ -656,8 +659,8 @@ plt.show()
 ```
 
 
-![png](output_13_0.png)
 
+<br/><img src='/images/output_13_0.png'>
 
 Fascinating, UEFA Euro is the most prestigious tournament and arguably the hardest to win, yet the world only saw 280 games played. The last EURO 2018 was generated ad revenue of  USD 2.13B  for 51 games thus USD 41M per game on average. Whilst the EPL generates on average USD6B per year for a total of 380 games, thus generating only USD16M per game on average. It totally makes sense that UEFA expanded the number of teams that can participate in order to boost the revenue in the expense of quality of games.Although there is no clear data on friendly games for a good reason. It is reported the state-owned first channel in Russia generated up to USD 5M per game after the World Cup. Obviously, I cannot take this value as representing the situation, but even a mere USD 100k will bost friendlies revenue north of a hundred millions dollars. 
 
@@ -678,8 +681,8 @@ plt.show()
 ```
 
 
-![png](output_15_0.png)
 
+<br/><img src='/images/output_15_0.png'>
 
 
 ```python
@@ -696,8 +699,8 @@ plt.show()
 ```
 
 
-![png](output_16_0.png)
 
+<br/><img src='/images/output_16_0.png'>
 
 
 ```python
