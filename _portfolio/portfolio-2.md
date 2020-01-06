@@ -1,3 +1,14 @@
+---
+title: "International Football Results part II"
+excerpt: "First International Match and 42000 games later<br/><img src='/images/England_v_scotland_1872_ad.png'>"
+collection: portfolio
+---
+
+<br/><img src='/images/England_v_scotland_1872_ad.png'>
+
+
+
+
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -756,8 +767,8 @@ show_wordcloud(countries)
 
 ```
 
+<br/><img src='/images/output_6_0.png'>
 
-![png](output_6_0.png)
 
 
 Using the beautiful Word Cloud, which is installed via pip install, we can the snapshot of the countries. Given the time span of the dataset, there is Czechoslovakia. There is no more Czech Republic, let alone Czechoslovakia(the Czech Republic is finally renamed Czechia).
