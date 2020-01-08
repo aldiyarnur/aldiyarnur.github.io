@@ -1,6 +1,6 @@
 ---
 title: "Russian Ruble and Oil Prices; Machine Learning Model based on the OLS to predict the exchange rate."
-excerpt: "First International Match and 42000 games later<br/><img src='/images/Elvira_boss.png'>"
+excerpt: "Putin and Nabiullina, head of Central Bank<br/><img src='/images/Elvira_boss.png'>"
 collection: portfolio
 ---
 <br/><img src='/images/Elvira_boss.png'>
