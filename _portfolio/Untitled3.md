@@ -1,3 +1,10 @@
+---
+title: "Russian Ruble and Oil Prices; Machine Learning Model based on the OLS to predict the exchange rate."
+excerpt: "First International Match and 42000 games later<br/><img src='/images/Elvira_boss.png'>"
+collection: portfolio
+---
+<br/><img src='/images/Elvira_boss.png'>
+
 ```python
 import numpy as np 
 import pandas as pd 
@@ -64,8 +71,8 @@ sns.lmplot(x="oil_urals", y="eurrub", hue="crimea", data=macro, markers=["o", "x
 
 
 
-![png](output_7_1.png)
 
+<br/><img src='/images/output_7_1.png'>
 
 Case closed, a nearly perfect correlation between oil price and an exchange rate following the events in Crimea. On the mechanics of the money flow later in the conclusion. Also, I will create a variable of real exchange rate adjusting to the inflation to prevent endogeneity trap. 
 
@@ -86,8 +93,8 @@ sns.jointplot(x="oil_urals", y="usdrub",  data=macro_after, kind="reg")
 
 
 
-![png](output_9_1.png)
 
+<br/><img src='/images/output_9_1.png'>
 
 ML or MLR starts here. First, I run a regular regression with all selected variables. Then I will start backwards elimination. 
 
@@ -129,8 +136,8 @@ plt.show()
 ```
 
 
-![png](output_14_0.png)
 
+<br/><img src='/images/output_14_0.png'>
 
 Initial model seems to be alright, most of the values are 0. Next step is to check the p-values. 
 
@@ -331,8 +338,8 @@ plt.show()
 ```
 
 
-![png](output_22_0.png)
 
+<br/><img src='/images/output_22_0.png'>
 
 
 ```python
