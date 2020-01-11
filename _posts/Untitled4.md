@@ -1,0 +1,415 @@
+The code below for building league tables from a list of games. 
+
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+from scipy.stats import poisson,skellam
+from collections import defaultdict
+from operator import itemgetter
+import math, random
+results = pd.read_csv('/Users/aldiyar/Desktop/python app1/ml/Untitled Folder/results.csv')
+results = results.drop([ 'tournament', 'city', 'country', 'neutral'], axis=1)
+results = results.drop(['date'], axis=1)
+```
+
+
+```python
+results.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Scotland</td>
+      <td>England</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>England</td>
+      <td>Scotland</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Scotland</td>
+      <td>England</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>England</td>
+      <td>Scotland</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Scotland</td>
+      <td>England</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+results['H'] = results['home_team']
+results['A'] = results['away_team']
+
+vars_to_keep = ['home_team', 'away_team', 'home_score', 'away_score']
+
+game_results = pd.melt(results, id_vars = vars_to_keep, value_vars = ['H', 'A'],
+                    var_name = 'Home/Away', value_name='Team')
+
+game_results['Opponent'] = np.where(game_results['Team'] == game_results['home_team'],
+                                    game_results['away_team'],
+                                    game_results['home_team'])
+
+
+```
+
+
+```python
+points_map = {
+    'W': 3,
+    'D': 1,
+    'L': 0
+}
+
+def get_result(score, score_opp):
+    if score == score_opp:
+        return 'D'
+    elif score > score_opp:
+        return 'W'
+    else:
+        return 'L'
+
+```
+
+
+```python
+game_results['Goals'] = np.where(game_results['Team'] == game_results['home_team'],
+                                 game_results['home_score'],
+                                 game_results['away_score'])
+
+game_results['Goals_Opp'] = np.where(game_results['Team'] != game_results['home_team'],
+                                     game_results['home_score'],
+                                     game_results['away_score'])
+
+game_results['Result'] = np.vectorize(get_result)(game_results['Goals'], game_results['Goals_Opp'])
+game_results['Points'] = game_results['Result'].map(points_map)
+
+
+
+league = (game_results
+     .groupby('Team')
+     .sum()['Points']
+     .sort_values(ascending=False))
+```
+
+
+```python
+league.head(50)
+```
+
+
+
+
+    Team
+    Brazil                 2074
+    England                1939
+    Germany                1853
+    Argentina              1820
+    Sweden                 1713
+    South Korea            1567
+    Mexico                 1511
+    Hungary                1504
+    Italy                  1490
+    France                 1423
+    Spain                  1370
+    Netherlands            1367
+    Uruguay                1358
+    Scotland               1266
+    Poland                 1253
+    Russia                 1247
+    Denmark                1235
+    Zambia                 1171
+    Belgium                1157
+    Austria                1136
+    Romania                1094
+    Egypt                  1082
+    Norway                 1056
+    Japan                  1030
+    Chile                  1030
+    Portugal               1026
+    United States          1017
+    Ghana                  1011
+    Switzerland            1007
+    Trinidad and Tobago    1005
+    Saudi Arabia           1001
+    China PR                986
+    Ivory Coast             983
+    Uganda                  962
+    Nigeria                 961
+    Paraguay                949
+    Iran                    938
+    Costa Rica              920
+    Bulgaria                914
+    Iraq                    895
+    Morocco                 895
+    Tunisia                 891
+    Kenya                   887
+    Australia               871
+    Cameroon                858
+    Thailand                851
+    Kuwait                  843
+    Senegal                 835
+    Republic of Ireland     817
+    Turkey                  793
+    Name: Points, dtype: int64
+
+
+
+
+```python
+result2 = pd.pivot_table(game_results,index=["Team"], aggfunc=np.sum)
+result2.head(50).sort_values
+```
+
+
+
+
+    <bound method DataFrame.sort_values of                         Goals  Goals_Opp  Points  away_score  home_score
+    Team                                                                    
+    Abkhazia                   48         24      48          23          49
+    Afghanistan               112        212     110         122         202
+    Albania                   303        520     320         308         515
+    Alderney                   15         75       9          37          53
+    Algeria                   701        521     775         435         787
+    American Samoa             36        306      17         152         190
+    Andalusia                  25         14      28          15          24
+    Andorra                    43        422      36         192         273
+    Angola                    395        367     480         297         465
+    Anguilla                   37        236      14          79         194
+    Antigua and Barbuda       271        337     221         246         362
+    Arameans Suryoye           16         12      17          14          14
+    Argentina                1828       1024    1820        1100        1752
+    Armenia                   211        356     196         246         321
+    Artsakh                    32         14      20          29          17
+    Aruba                     150        281      90         180         251
+    Asturias                    3          1       3           3           1
+    Australia                1030        570     871         672         928
+    Austria                  1380       1213    1136        1106        1487
+    Azerbaijan                181        406     206         210         377
+    Bahamas                    44        107      35          50         101
+    Bahrain                   574        610     604         496         688
+    Bangladesh                179        411     189         258         332
+    Barawa                     16         46       9          41          21
+    Barbados                  339        418     320         323         434
+    Basque Country            154         75     122         106         123
+    Belarus                   294        352     291         284         362
+    Belgium                  1346       1192    1157        1073        1465
+    Belize                     79        159      63          88         150
+    Benin                     265        473     240         290         448
+    Bermuda                   255        242     188         224         273
+    Bhutan                     47        318      26          99         266
+    Bolivia                   469        889     415         527         831
+    Bonaire                    33         65      23          54          44
+    Bosnia and Herzegovina    322        291     309         262         351
+    Botswana                  229        348     307         239         338
+    Brazil                   2148        893    2074        1219        1822
+    British Virgin Islands     79        287      62         115         251
+    Brittany                   18         15      21          16          17
+    Brunei                     53        252      32         109         196
+    Bulgaria                  950        996     914         791        1155
+    Burkina Faso              445        530     473         369         606
+    Burma                     572        503     513         385         690
+    Burundi                   199        235     219         177         257
+    Cambodia                  246        562     167         306         502
+    Cameroon                  737        555     858         527         765
+    Canada                    432        518     483         400         550
+    Canary Islands             11          3       9           3          11
+    Cape Verde                169        193     210         140         222
+    Cascadia                   23         14      13          16          21>
+
+
+
+
+```python
+result2
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Goals</th>
+      <th>Goals_Opp</th>
+      <th>Points</th>
+      <th>away_score</th>
+      <th>home_score</th>
+    </tr>
+    <tr>
+      <th>Team</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Abkhazia</td>
+      <td>48</td>
+      <td>24</td>
+      <td>48</td>
+      <td>23</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <td>Afghanistan</td>
+      <td>112</td>
+      <td>212</td>
+      <td>110</td>
+      <td>122</td>
+      <td>202</td>
+    </tr>
+    <tr>
+      <td>Albania</td>
+      <td>303</td>
+      <td>520</td>
+      <td>320</td>
+      <td>308</td>
+      <td>515</td>
+    </tr>
+    <tr>
+      <td>Alderney</td>
+      <td>15</td>
+      <td>75</td>
+      <td>9</td>
+      <td>37</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <td>Algeria</td>
+      <td>701</td>
+      <td>521</td>
+      <td>775</td>
+      <td>435</td>
+      <td>787</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>Yugoslavia</td>
+      <td>940</td>
+      <td>737</td>
+      <td>767</td>
+      <td>737</td>
+      <td>940</td>
+    </tr>
+    <tr>
+      <td>Zambia</td>
+      <td>1118</td>
+      <td>730</td>
+      <td>1171</td>
+      <td>804</td>
+      <td>1044</td>
+    </tr>
+    <tr>
+      <td>Zanzibar</td>
+      <td>187</td>
+      <td>434</td>
+      <td>164</td>
+      <td>224</td>
+      <td>397</td>
+    </tr>
+    <tr>
+      <td>Zimbabwe</td>
+      <td>620</td>
+      <td>516</td>
+      <td>685</td>
+      <td>493</td>
+      <td>643</td>
+    </tr>
+    <tr>
+      <td>Åland Islands</td>
+      <td>73</td>
+      <td>75</td>
+      <td>69</td>
+      <td>67</td>
+      <td>81</td>
+    </tr>
+  </tbody>
+</table>
+<p>314 rows × 5 columns</p>
+</div>
+
+
+
+
+```python
+
+```
