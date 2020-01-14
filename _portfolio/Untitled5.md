@@ -1,3 +1,16 @@
+---
+title: "EPL Season 18-19 and Poisson Prediction Model part I"
+excerpt: "Predicting outcomes of the games using the Poisson Process. <br/><img src='/images/Premier_League_Logo.svg.png'>"
+collection: portfolio
+---
+
+<br/><img src='/images/Premier_League_Logo.svg.png'>
+
+
+
+
+
+
 The Binomial and Poisson distributions are similar, but they are different. Also, the fact that they are both discrete does not mean that they are the same. 
 
 The difference between the two is that while both measure the number of certain random events (or "successes") within a certain frame, the Binomial is based on discrete events, while the Poisson is based on continuous events. That is, with a binomial distribution you have a certain number, 𝑛, of "attempts," each of which has probability of success 𝑝. With a Poisson distribution, you essentially have infinite attempts, with infinitesimal chance of success. That is, given a Binomial distribution with some 𝑛,𝑝, if you let 𝑛→∞ and 𝑝→0 in such a way that 𝑛𝑝→𝜆, then that distribution approaches a Poisson distribution with parameter 𝜆.
@@ -450,8 +463,8 @@ g = sns.jointplot("Goal_diff", "Rank", data=tab, kind = 'reg',
 ```
 
 
-![png](output_17_0.png)
 
+<br/><img src='/images/output_17_0.png'>
 
 
 ```python
@@ -461,8 +474,8 @@ d = sns.jointplot("Home_Str", "Rank", data=tab, kind = 'reg',
 ```
 
 
-![png](output_18_0.png)
 
+<br/><img src='/images/output_18_0.png'>
 
 
 ```python
@@ -473,8 +486,8 @@ t = sns.jointplot("Home_Str", "Goals", data=tab, kind = 'reg',
 ```
 
 
-![png](output_19_0.png)
 
+<br/><img src='/images/output_19_0.png'>
 
 
 ```python
@@ -483,8 +496,7 @@ p = sns.jointplot("Home_Str_T", "Goals", data=tab, kind = 'reg',
 ```
 
 
-![png](output_20_0.png)
-
+<br/><img src='/images/output_20_0.png'>
 
 Fascinatingly, it encourages more research on goalkeepers quality and attack quality. There is no doubt that players such as Aguero are extremely clinical in front of the goals, but, to have on average less than 3 attempts on goal per game tell more about energy conservation mode of top teams, that have to play twice a week. That is why it is clever to buy tickets for games with lower band teams, there is more action to witness.   
 
@@ -497,8 +509,8 @@ p = sns.jointplot("Home_Corer", "Goals", data=tab, kind = 'reg',
 ```
 
 
-![png](output_22_0.png)
 
+<br/><img src='/images/output_22_0.png'>
 
 
 ```python
@@ -509,8 +521,8 @@ p = sns.jointplot("Home_F", "Goals", data=tab, kind = 'reg',
 ```
 
 
-![png](output_23_0.png)
 
+<br/><img src='/images/output_23_0.png'>
 
 
 ```python
@@ -560,8 +572,8 @@ plt.show()
 
 
 
-![png](output_26_1.png)
 
+<br/><img src='/images/output_26_1.png'>
 
 It looks like data visually fits the Poisson Distribution.
 
@@ -595,8 +607,8 @@ plt.show()
 
 
 
-![png](output_29_1.png)
 
+<br/><img src='/images/output_29_1.png'>
 
 Looks like a number of attempts or strikes on goals is normally distributed. The home team has a castle advantage, thus it has a higher number of attempts on goals. Thus the right tail is fatter for a home team rather than a home team.
 
@@ -630,8 +642,8 @@ plt.show()
 
 
 
-![png](output_32_1.png)
 
+<br/><img src='/images/output_32_1.png'>
 
 Number of strikes on target looks like a Poisson distribution with a lambda 3 or 4. There is a light skewness present. 
 
@@ -665,8 +677,8 @@ plt.show()
 
 
 
-![png](output_35_1.png)
 
+<br/><img src='/images/output_35_1.png'>
 
 Fouls per game look very normally distributed. Now, lets go back to goals
 
@@ -702,8 +714,8 @@ plt.show()
 
 
 
-![png](output_37_1.png)
 
+<br/><img src='/images/output_37_1.png'>
 
 
 ```python
@@ -739,3 +751,4 @@ print(" Var ", np.var(epl['FTHG']))
 ```python
 
 ```
+To be Continued
